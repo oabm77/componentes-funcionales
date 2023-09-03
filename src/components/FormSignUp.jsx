@@ -12,6 +12,13 @@ function FormSignUp({ handleSubmit }) {
     const [prom, setProm] = useState(true)
     const [nov, setNov] = useState(false)
 
+    const [errors, setErrors] = useState({
+        name: {
+            error: true,
+            message: "Deben ser al menos 3 caracteres",
+        },
+    })
+
   return (
     <form onSubmit={(e) => { 
         e.preventDefault()
@@ -27,6 +34,8 @@ function FormSignUp({ handleSubmit }) {
             setName(e.target.value)
         }}
         value={name}
+        error={errors.name.error}
+        helperText={errors.name.error ? errors.name.message : ''}
       />
       <TextField 
         id="lastname" 
