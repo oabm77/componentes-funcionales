@@ -9,7 +9,7 @@ function FormSignUp() {
 
     const [name, setName] = useState('')
     useEffect(() => {
-
+        console.log("Name cambió: ", name)
     }, [name])
 
   return (
